@@ -7,6 +7,9 @@
 		from contents
 		where type = 1;
 		
+		select name into: num_vars separated by ' ' 
+		from contents
+		where type = 2;
 	quit;
 	
 %mend;
