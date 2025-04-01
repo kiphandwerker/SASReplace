@@ -15,10 +15,16 @@
 	data &Output. (drop = i j);
 		set &Input.;
 		array num_vars{*} &num_vars.;
+		array char_vars{*} &char_vars.;
 
 		do i = 1 to dim(num_vars);
 			if num_vars{i} = &old. then
 			num_vars{i} = &new.;
+		end;
+
+		do j = 1 to dim(char_vars);
+			if char_vars{j} = &old. then
+			char_vars{j} = &new.;
 		end;
 
 	run;
