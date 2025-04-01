@@ -26,6 +26,9 @@
 			if char_vars{j} = &old. then
 			char_vars{j} = &new.;
 		end;
-
 	run;
+
+	proc datasets library=work nolist;
+		delete contents;run;
+
 %mend;
