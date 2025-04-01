@@ -29,16 +29,16 @@ Here we will walk through the application of this macro step by step:
 data test;
 input ID Name$ Age;
 datalines;
-1 Brandy 999
-2 Tom 34
-3 999 57
-4 Keith 61
-5 Steve 19
-6 Emily 999
-7 999 37
+1 Brandy   999
+2 Tom      34
+3 999      57
+4 Keith    61
+5 Steve    19
+6 Emily    999
+7 999      37
 8 Caroline 42
-9 Andy 999
-10 999 27
+9 Andy     999
+10 999     27
 ;
 run;
 ```
@@ -90,16 +90,16 @@ Let's do the same thing as before but change them to 999 because why not.
 data test;
 input ID Name$ Score;
 datalines;
-1 Brandy 3
-2 Tom 7
-3 Sarah -4
-4 Keith 5
-5 Steve 2
-6 Emily -4
-7 Rachel 10
+1 Brandy   3
+2 Tom      7
+3 Sarah    -4
+4 Keith    5
+5 Steve    2
+6 Emily    -4
+7 Rachel   10
 8 Caroline 9
-9 Andy -4
-10 Tony 1
+9 Andy     -4
+10 Tony    1
 ;
 run;
 ```
