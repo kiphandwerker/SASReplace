@@ -14,7 +14,13 @@ This function offers a simple way of finding and replacing those coded values wi
 ```
 
 <li>Upload the files to SAS OnDemand or SAS program of choice.
+<li> SAS OnDemand should run this macro just fine. However if you are running this on some other SAS product (ie Enterprise), you may need to wrap the SQL query in the following:
 
+```sas
+%let vl = %sysfunc(dosubl(%nrstr(
+    PROC-SQL-QUERY-HERE
+)));
+```
 </ol>
 
 # Usage
