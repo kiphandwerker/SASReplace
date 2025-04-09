@@ -1,5 +1,12 @@
 # SAS Replace Macro
 
+## Table of Contents
+# Table of Contents
+- [Overview](#overview)
+- [Set up](#set-up)
+- [Usage](#usage)
+    - [Example 1: Replacing all](#example-1)
+    - [Example 2: Replacing specific column](#example-2)
 # Overview
 It is not uncommon to see variables coded in an odd way to convey some sort of meaning. For example, rather than allowing missing values in data collect, the variables may be coded with 999. When counting missing values, rather than doing conditional checks for these values it is often easier to replace them with the actual missing value. Most softwares have built in functions to check for these, thereby making analysis a bit easier.
 
@@ -83,54 +90,7 @@ proc print noobs data=testnew;run;
 ```
 </ol>
 
-
 ## Example 2
-
-<ol>
-<li> Here is another example, but this time missing values are replaced with -4.
-
-
-Let's do the same thing as before but change them to 999 because why not.
-
-```sas
-data test;
-input ID Name$ Score;
-datalines;
-1 Brandy   3
-2 Tom      7
-3 Sarah    -4
-4 Keith    5
-5 Steve    2
-6 Emily    -4
-7 Rachel   10
-8 Caroline 9
-9 Andy     -4
-10 Tony    1
-;
-run;
-```
-
-<li> Read in the macro.
-
-<li> Call the macro.
-
-```sas
-%Replace(Input = test, 
-        Output = testnew, 
-        Old = -4, 
-        New = 999);
-```
-<li>Print the data
-
-```sas
-title 'Old data';
-proc print noobs data=test;run;
-title 'New data';
-proc print noobs data=testnew;run;
-```
-</ol>
-
-## Example 3
 <ol>
 <li> Here is another example, but this time missing values are replaced with -4.
 
