@@ -129,3 +129,49 @@ title 'New data';
 proc print noobs data=testnew;run;
 ```
 </ol>
+
+## Example 3
+<ol>
+<li> Here is another example, but this time missing values are replaced with -4.
+
+
+Let's just change the Score columns because a weight change of -4 is important, where as a -4, for whatever reason, indicated missing.  
+
+```sas
+data test;
+input ID Name$ Score Weightchange;
+datalines;
+1 Brandy   3  -10
+2 Tom	   7  -4
+3 Sarah   -4  4
+4 Keith    5  -7
+5 Steve    2  5
+6 Emily   -4  -4
+7 Rachel   10 -2
+8 Caroline 9  3
+9 Andy    -4  -4
+10 Tony    1  -2
+;
+run;
+```
+
+<li> Read in the macro.
+
+<li> Call the macro.
+
+```sas
+%Replace(Input = test, 
+        Output = testnew, 
+        Old = -4, 
+        New = ., 
+        cols = Score);
+```
+<li>Print the data
+
+```sas
+title 'Old data';
+proc print noobs data=test;run;
+title 'New data';
+proc print noobs data=testnew;run;
+```
+</ol>
